@@ -1,0 +1,184 @@
+:root {
+    --purpura: #941c6b;
+    --purpura-oscuro: #771756;
+    --gris-claro: #8c8c8c;
+    --gris-oscuro: #454340
+}
+body {
+    background: -moz-linear-gradient(top, rgba(229, 229, 229, .65) 0, rgba(229, 229, 229, .64) 1%, rgba(244, 244, 244, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(229, 229, 229, .65) 0, rgba(229, 229, 229, .64) 1%, rgba(244, 244, 244, 0) 100%);
+    background: linear-gradient(to bottom, rgba(229, 229, 229, .65) 0, rgba(229, 229, 229, .64) 1%, rgba(244, 244, 244, 0) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a6e5e5e5', endColorstr='#00f4f4f4', GradientType=0);
+    overflow-y: hidden
+}
+@-webkit-keyframes titilar {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+  header#header-inicio{
+    padding-top:10%;
+  }
+  header#header-inicio #logo {
+      margin-top: 0;
+      position: relative;
+      padding-left: 0;
+      display: block;
+      width: 100%;
+      text-align: center
+  }
+  header#header-inicio {
+      margin-top: 14%
+  }
+  header#header-inicio #logo .logo-text .gris {
+      color: var(--gris-oscuro)
+  }
+  header#header-inicio #logo .logo-text .purpura.guion-bajo {
+      margin-left: 3px;
+      -webkit-animation: .7s infinite titilar;
+      -moz-animation: .7s infinite titilar;
+      -ms-animation: .7s infinite titilar;
+      animation: .7s infinite titilar;
+      transition: .7s all linear
+  }
+  header#header-inicio #logo .logo-text .purpura {
+      color: var(--purpura)
+  }
+  header#header-inicio #logo .logo-text {
+      font-family: Roboto, sans-serif;
+      font-weight: 900;
+      font-size: 7.5vw;
+      display: block;
+      margin-bottom: 0;
+      line-height: 10vw;
+      margin-top: 25px;
+      margin-left: 0;
+      padding-left: 0;
+      padding-bottom: 0
+  }
+  header#header-inicio #logo .slogan {
+      font-family: Lato, sans-serif;
+      color: var(--gris-claro);
+      font-weight: 300;
+      font-size: 2.6vw;
+      letter-spacing: .9vw;
+      margin-left: 0;
+      padding: 0;
+      position: relative
+  } 
+
+
+
+
+@media (min-width: 554px){
+
+  header#header-inicio #logo {
+      margin-top: 0;
+      position: relative;
+      padding-left: 0;
+      display: block;
+      width: 100%;
+      text-align: center
+  }
+  header#header-inicio {
+      margin-top: 14%
+  }
+  header#header-inicio #logo .logo-text .gris {
+      color: var(--gris-oscuro)
+  }
+  header#header-inicio #logo .logo-text .purpura.guion-bajo {
+      margin-left: 3px;
+      -webkit-animation: .7s infinite titilar;
+      -moz-animation: .7s infinite titilar;
+      -ms-animation: .7s infinite titilar;
+      animation: .7s infinite titilar;
+      transition: .7s all linear
+  }
+  header#header-inicio #logo .logo-text .purpura {
+      color: var(--purpura)
+  }
+  header#header-inicio #logo .logo-text {
+      font-family: Roboto, sans-serif;
+      font-weight: #000;
+      font-size: 6.5vw;
+      display: block;
+      margin-bottom: 0;
+      line-height: 9vw;
+      margin-top: 25px;
+      margin-left: 0;
+      padding-left: 0;
+      padding-bottom: 0
+  }
+  header#header-inicio #logo .slogan {
+      font-family: Lato, sans-serif;
+      color: var(--gris-claro);
+      font-weight: 300;
+      font-size: 2.2vw;
+      letter-spacing: .7vw;
+      margin-left: 0;
+      padding: 0;
+      position: relative
+  } 
+}
+
+
+
+
+
+
+@media (min-width: 992px){
+    header#header-inicio{
+    padding-top:0%;
+  }
+  header#header-inicio #logo {
+      margin-top: 0;
+      position: relative;
+      padding-left: 0;
+      display: block;
+      width: 100%;
+      text-align: center
+  }
+  header#header-inicio {
+      margin-top: 14%
+  }
+  header#header-inicio #logo .logo-text .gris {
+      color: var(--gris-oscuro)
+  }
+  header#header-inicio #logo .logo-text .purpura.guion-bajo {
+      margin-left: 3px;
+      -webkit-animation: .7s infinite titilar;
+      -moz-animation: .7s infinite titilar;
+      -ms-animation: .7s infinite titilar;
+      animation: .7s infinite titilar;
+      transition: .7s all linear
+  }
+  header#header-inicio #logo .logo-text .purpura {
+      color: var(--purpura)
+  }
+  header#header-inicio #logo .logo-text {
+      font-family: Roboto, sans-serif;
+      font-weight: #000;
+      font-size: 3.5vw;
+      display: block;
+      margin-bottom: 0;
+      line-height: 5vw;
+      margin-top: 25px;
+      margin-left: 0;
+      padding-left: 0;
+      padding-bottom: 0
+  }
+  header#header-inicio #logo .slogan {
+      font-family: Lato, sans-serif;
+      color: var(--gris-claro);
+      font-weight: 300;
+      font-size: 1.2vw;
+      letter-spacing: .4vw;
+      margin-left: 0;
+      padding: 0;
+      position: relative
+  }
+}
