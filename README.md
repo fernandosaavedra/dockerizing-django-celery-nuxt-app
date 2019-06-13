@@ -20,7 +20,7 @@ We must write the following commands in terminal:
 
 ~~~
 # cd into folder
-cd app
+cd dockerizing-django-celery-nuxt-app
 
 # Create the images
 docker-compose build
