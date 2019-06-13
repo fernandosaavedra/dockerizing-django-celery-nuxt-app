@@ -20,7 +20,7 @@ def get_days(from_date, to_date):
     return d
 
 
-def get_currency_val(u):
+def get_api_values(u):
     try:
         r = requests.get(url=u)
     except Exception as err:
@@ -36,17 +36,24 @@ def parse_date(date):
     return d
 
 
+def format_date(date):
+    d = date.replace('T', ' ').replace('Z', '')
+    d = datetime.datetime.strptime(d, '%Y-%m-%d %H:%M:%S.%f')
+    d = d.strftime('%Y-%m-%d')
+    return d
+
+
 def parse_values(r, i, p):
     t = {}
     try:
-        t['val'] = r['serie'][0]['valor']
+        t['val'] = r['valor']
     except Exception as e:
         t['val'] = p
     finally:
         if i <= 1:
             pass
         else:
-            t['delta'] = t['val'] - p
+            t['delta'] = round(t['val'] - p, 2)
         return t
 
 
@@ -56,19 +63,27 @@ def export_data(data):
 
 
 def get_dolar_data():
-    days_to_request = get_days(INIT_DATE, END_DATE)
     dolar_values = []
-    delta, prev_val, i = (0, 0, 0)
-    for day in days_to_request:
-        tmp = {}
-        url = 'https://mindicador.cl/api/dolar/{}'.format(day)
-        request_json = get_currency_val(url)
-        tmp['model'] = 'dolar.dolar'
-        tmp['pk'] = parse_date(day)
-        tmp['fields'] = parse_values(request_json, i, prev_val)
-        prev_val = tmp['fields']['val']
-        dolar_values.append(tmp)
-        i = i+1
+    prev_val, i = (0, 0)
+    years = ['2018', '2019']
+    days = get_days(INIT_DATE, END_DATE)
+    for y in years:
+        url = 'https://mindicador.cl/api/dolar/{}'.format(y)
+        serie = get_api_values(url)['serie']
+        for s in reversed(serie):
+            tmp_date = format_date(s['fecha'])
+            j = 0
+            for d in days:
+                tmp = {}
+                tmp['pk'] = parse_date(d)
+                tmp['fields'] = parse_values(s, i, prev_val)
+                dolar_values.append(tmp)
+                prev_val = tmp['fields']['val']
+                j += 1
+                i += 1
+                if tmp['pk'] == tmp_date:
+                    break
+            days = days[j:]
     export_data(dolar_values)
 
 
