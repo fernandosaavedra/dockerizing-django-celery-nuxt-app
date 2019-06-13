@@ -10,7 +10,7 @@
             <span class="slogan">{{tagline}}</span></div>
             <div class="button-container">
               <nuxt-link class="btn btn-info" id="button-start" to="/charts">Ver Gráficos</nuxt-link>
-              <a href="#" class="btn btn-info" id="button-project" role="button">Github</a>
+              <a href="https://github.com/fernandosaavedra/dockerizing-django-celery-nuxt-app" target="_blank" class="btn btn-info" id="button-project" role="button">Github</a>
             </div>
         </div>
         <div class="clearfix"></div>
