@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "hchs-vue-charts": "^1.2.8",
     "nuxt": "^2.0.0"
   },
